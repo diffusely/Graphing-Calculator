@@ -4,23 +4,13 @@ ExpTree::ExpTree(const std::string &form)
 	: form(form)
 	, root(nullptr)
 {
-	std::cout << infixToPostfix() << "\n";
+	//std::cout << infixToPostfix() << "\n";
 	constructTree();
 }
 
 ExpTree::~ExpTree()
 {
-
-}
-
-void ExpTree::insert(const std::string& val)
-{
-	if (!root)
-		root = new Node(val);
-	else
-	{
-
-	}
+	freeTree(root);
 }
 
 void ExpTree::print(Node *root)
@@ -29,7 +19,7 @@ void ExpTree::print(Node *root)
 		return;
 
 	print(root->left);
-	std::cout << root->ch << "\n";
+	std::cout << root->value << "\n";
 	print(root->right);
 }
 
@@ -49,7 +39,12 @@ std::string ExpTree::infixToPostfix()
 			continue;
 
 		if (!isOperator(form[i]))
+		{
 			res.push_back(form[i]);
+
+			if (i + 1 >= form.size() || isOperator(form[i + 1]))
+				res.push_back('|');
+		}
 		else if (form[i] == ')')
 		{
 			while (!stack.empty() && stack.top() != '(')
@@ -86,27 +81,50 @@ void ExpTree::constructTree()
 {
 	std::stack<Node*> stack;
 	std::string res = infixToPostfix();
+	std::string value;
 
 	for (int i = 0; i < res.size(); i++)
 	{
-		if (!isOperator(res[i]))
+		if (res[i] == '|')
 		{
-			Node *temp = new Node(res[i]);
+			Node *temp = new Node(value);
 			stack.push(temp);
+			value.clear();
 		}
+		else if (!isOperator(res[i]))
+			value.push_back(res[i]);
 		else
 		{
-			Node* temp = new Node(res[i]);
+			value.push_back(res[i]);
+			Node* temp = new Node(value);
 
-			temp->left = stack.top();
-			stack.pop();
-			temp->right = stack.top();
-			stack.pop();
+			if (!stack.empty())
+			{
+				temp->right = stack.top();
+				stack.pop();
+			}
+			if (!stack.empty())
+			{
+				temp->left = stack.top();
+				stack.pop();
+			}
+			
 			stack.push(temp);
+			value.clear();
 		}
 	}
 	if (!stack.empty())
 		root = stack.top();
+}
+
+void ExpTree::freeTree(Node *root)
+{
+	if (!root)
+		return;
+
+	freeTree(root->left);
+	free(root->left);
+	freeTree(root->right);
 }
 
 bool ExpTree::isOperator(char opr)

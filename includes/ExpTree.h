@@ -15,16 +15,9 @@ private:
 			, value(value)
 		{}
 
-		Node(char ch)
-			: left(nullptr)
-			, right(nullptr)
-			, ch(ch)
-		{}
-
 		Node *left;
 		Node *right;
 		std::string value;
-		char ch;
 	};
 public:
 	ExpTree(const std::string &form);
@@ -34,13 +27,14 @@ public:
 	void print(Node *root);
 	Node *getRoot() const;
 	std::string infixToPostfix();
-	
+
 private:
 	Node *root;
 	std::string form;
 private:
 	
 	void constructTree();
+	void freeTree(Node *root);
 
 	bool isOperator(char opr);
 	int getPriority(char opr);
