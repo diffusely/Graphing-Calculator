@@ -23,7 +23,6 @@ public:
 	void Run();
 
 
-
 private:
 	GLFWwindow* window;
 	std::unique_ptr<Shader> shader;
