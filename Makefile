@@ -5,7 +5,10 @@ GLAD	= lib/glad/
 LIB		= -L$(GLAD) -lglad
 
 SDIR	= src/
-SRC		= $(SDIR)main.cpp $(SDIR)Triangle.cpp $(SDIR)Shader.cpp $(SDIR)Line.cpp $(SDIR)Graph.cpp
+SRC		= $(SDIR)main.cpp $(SDIR)Triangle.cpp \
+		  $(SDIR)Shader.cpp $(SDIR)Line.cpp \
+		  $(SDIR)Graph.cpp $(SDIR)ExpTree.cpp
+
 OBJ		= $(SRC:%.cpp=%.o)
 
 INC		= -Iincludes -I$(GLAD)/include

@@ -4,9 +4,9 @@
 class Triangle
 {
 public:
-    Triangle();
-    void draw() const;
+	Triangle();
+	void draw() const;
 
 private:
-    unsigned int VAO, VBO;
+	unsigned int VAO, VBO;
 };

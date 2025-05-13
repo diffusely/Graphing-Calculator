@@ -16,15 +16,13 @@ Graph::Graph(int witdth, int height)
 		std::string("shaders/fragment.glsl")
 	);
 
-	line_x = std::make_unique<Line>(glm::vec2{-1.0f, 0.0f}, glm::vec2{1.0f, 0.0f});
-	line_y = std::make_unique<Line>(glm::vec2{0.0f, -1.0f}, glm::vec2{0.0f, 1.0f});
+	InitGrid();
 }
 
 Graph::~Graph()
 {
 	shader.reset();
-	line_x.reset();
-	line_y.reset();
+	grid_lines.clear();
 	glfwDestroyWindow(window);
 	glfwTerminate();
 }
@@ -53,6 +51,18 @@ bool Graph::InitGLAD()
     return gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 }
 
+void Graph::InitGrid()
+{
+	for(float i = 0.0f; i > -1.0; i-= 0.1f)
+		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
+	for(float i = 0.1f; i < 1.0; i+= 0.1f)
+		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
+	for(float i = 0.0f; i > -1.0; i-= 0.1f * width / height)
+		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, i}, glm::vec2{1.0f, i}));
+	for(float i = 0.1f * width / height; i < 1.0; i+= 0.1f * width / height)
+		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, i}, glm::vec2{1.0f, i}));
+}
+
 void Graph::Update()
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -66,8 +76,8 @@ void Graph::Render()
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	line_x->Draw();
-	line_y->Draw();
+	for (const auto &it : grid_lines)
+		it->Draw();
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
