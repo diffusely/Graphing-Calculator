@@ -4,7 +4,8 @@ ExpTree::ExpTree(const std::string &form)
 	: form(form)
 	, root(nullptr)
 {
-
+	std::cout << infixToPostfix() << "\n";
+	constructTree();
 }
 
 ExpTree::~ExpTree()
@@ -15,9 +16,26 @@ ExpTree::~ExpTree()
 void ExpTree::insert(const std::string& val)
 {
 	if (!root)
-	{
 		root = new Node(val);
+	else
+	{
+
 	}
+}
+
+void ExpTree::print(Node *root)
+{
+	if (!root)
+		return;
+
+	print(root->left);
+	std::cout << root->ch << "\n";
+	print(root->right);
+}
+
+ExpTree::Node *ExpTree::getRoot() const
+{
+	return root;
 }
 
 std::string ExpTree::infixToPostfix()
@@ -66,15 +84,29 @@ std::string ExpTree::infixToPostfix()
 
 void ExpTree::constructTree()
 {
-	std::stack<char> stack;
+	std::stack<Node*> stack;
 	std::string res = infixToPostfix();
 
 	for (int i = 0; i < res.size(); i++)
 	{
 		if (!isOperator(res[i]))
-			stack.push(res[i]);
+		{
+			Node *temp = new Node(res[i]);
+			stack.push(temp);
+		}
+		else
+		{
+			Node* temp = new Node(res[i]);
+
+			temp->left = stack.top();
+			stack.pop();
+			temp->right = stack.top();
+			stack.pop();
+			stack.push(temp);
+		}
 	}
-	
+	if (!stack.empty())
+		root = stack.top();
 }
 
 bool ExpTree::isOperator(char opr)

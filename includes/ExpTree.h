@@ -15,21 +15,31 @@ private:
 			, value(value)
 		{}
 
+		Node(char ch)
+			: left(nullptr)
+			, right(nullptr)
+			, ch(ch)
+		{}
+
 		Node *left;
 		Node *right;
 		std::string value;
+		char ch;
 	};
 public:
 	ExpTree(const std::string &form);
 	~ExpTree();
 
 	void insert(const std::string& val);
-
+	void print(Node *root);
+	Node *getRoot() const;
+	std::string infixToPostfix();
+	
 private:
 	Node *root;
 	std::string form;
 private:
-	std::string infixToPostfix();
+	
 	void constructTree();
 
 	bool isOperator(char opr);
