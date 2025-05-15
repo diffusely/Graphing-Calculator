@@ -101,7 +101,7 @@ float ExpTree::getResult(Node *root, float value)
 	if (root->value == "+") return leftVal + rightVal;
 	if (root->value == "-") return leftVal - rightVal;
 	if (root->value == "*") return leftVal * rightVal;
-	if (root->value == "/") return leftVal / rightVal;
+	if (root->value == "/" && rightVal != 0) return leftVal / rightVal;
 	if (root->value == "^") return std::pow(leftVal,rightVal);
 
 	throw std::runtime_error("Unknown operator: " + root->value);

@@ -11,12 +11,22 @@
 #include <exception>
 #include <vector>
 
+#include <mutex>
+#include <atomic>
+
 class Graph
 {
+public:
+	std::mutex formula_mutex;
+	std::string input_formula = "x^2";
+	std::atomic<bool> has_new_formula = true;
+	std::atomic<bool> running = true;
 public:
 	Graph(int witdth, int height, std::string input);
 	~Graph();
 
+	void DrawFunc(const std::string &);
+	glm::vec2 GetMousePosition() const;
 	void Run();
 
 private:
@@ -34,8 +44,6 @@ private:
 	// Update and Render
 	void Update();
 	void Render();
-
-	void DrawFunc(const std::string &);
 
 private:
 	// Init
