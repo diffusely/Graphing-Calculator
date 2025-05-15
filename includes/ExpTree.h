@@ -3,6 +3,7 @@
 #include <stack>
 #include <string>
 #include <iostream>
+#include <math.h>
 
 class ExpTree
 {
@@ -19,14 +20,16 @@ private:
 		Node *right;
 		std::string value;
 	};
+
 public:
 	ExpTree(const std::string &form);
 	~ExpTree();
 
-	void insert(const std::string& val);
+
 	void print(Node *root);
 	Node *getRoot() const;
 	std::string infixToPostfix();
+	float getResult(Node *root, float val);
 
 private:
 	Node *root;

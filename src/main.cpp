@@ -5,13 +5,11 @@ int main()
 {
 	try
 	{
-		std::string a;
+		std::string input;
 		std::cout << "f(x)=";
-		std::cin >> a;
-		ExpTree tree(a);
-		tree.print(tree.getRoot());
-		// Graph graph(1000, 800);
-		// graph.Run();
+		std::getline(std::cin, input);
+		Graph graph(1000, 800, input);
+		graph.Run();
 	}
 	catch(const std::exception& e)
 	{

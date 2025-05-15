@@ -4,7 +4,7 @@ ExpTree::ExpTree(const std::string &form)
 	: form(form)
 	, root(nullptr)
 {
-	//std::cout << infixToPostfix() << "\n";
+	std::cout << infixToPostfix() << "\n";
 	constructTree();
 }
 
@@ -36,7 +36,11 @@ std::string ExpTree::infixToPostfix()
 	for (int i = 0; i < form.size(); i++)
 	{
 		if (isspace(form[i]))
+		{
+			if (i - 1 >= 0 && (isdigit(form[i - 1]) || isalpha(form[i - 1])))
+				res.push_back('|');
 			continue;
+		}
 
 		if (!isOperator(form[i]))
 		{
@@ -75,6 +79,32 @@ std::string ExpTree::infixToPostfix()
 	}
 
 	return res;
+}
+
+float ExpTree::getResult(Node *root, float value)
+{
+
+	if (!root)
+		return 0;
+
+	if (!root->left && !root->right)
+	{	
+		if (root->value == "x")
+			return value;
+		return std::stod(root->value);
+	}
+
+
+	double leftVal = getResult(root->left, value);
+	double rightVal = getResult(root->right, value);
+
+	if (root->value == "+") return leftVal + rightVal;
+	if (root->value == "-") return leftVal - rightVal;
+	if (root->value == "*") return leftVal * rightVal;
+	if (root->value == "/") return leftVal / rightVal;
+	if (root->value == "^") return std::pow(leftVal,rightVal);
+
+	throw std::runtime_error("Unknown operator: " + root->value);
 }
 
 void ExpTree::constructTree()

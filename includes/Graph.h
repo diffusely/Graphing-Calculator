@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include "Shader.h"
 #include "Line.h"
+#include "ExpTree.h"
 
 #include <memory>
 #include <iostream>
@@ -13,7 +14,7 @@
 class Graph
 {
 public:
-	Graph(int witdth, int height);
+	Graph(int witdth, int height, std::string input);
 	~Graph();
 
 	void Run();
@@ -27,11 +28,14 @@ private:
 
 private:
 	std::vector<std::unique_ptr<Line>> grid_lines;
+	std::vector<std::unique_ptr<Line>> func;
 
 private:
 	// Update and Render
 	void Update();
 	void Render();
+
+	void DrawFunc(const std::string &);
 
 private:
 	// Init

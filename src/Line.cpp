@@ -1,7 +1,14 @@
 #include "Line.h"
 
+Line::Line(glm::vec2 a, glm::vec2 b, glm::vec3 color)
+{
+	this->color = color;
+	Init(a, b);
+}
+
 Line::Line(glm::vec2 a, glm::vec2 b)
 {
+	this->color = glm::vec3{0.3f, 0.3f, 0.3f};
 	Init(a, b);
 }
 
@@ -26,8 +33,9 @@ void Line::Init(glm::vec2 a, glm::vec2 b)
 	glEnableVertexAttribArray(0);
 }
 
-void Line::Draw() const
+void Line::Draw(Shader &shader) const
 {
+	shader.SetVec3("uColor", color);
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_LINES, 0, 2);
 }

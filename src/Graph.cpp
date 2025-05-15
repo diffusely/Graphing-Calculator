@@ -1,11 +1,12 @@
 #include "Graph.h"
 
-Graph::Graph(int witdth, int height)
+Graph::Graph(int witdth, int height, std::string input)
 	: window(nullptr)
 	, shader(nullptr)
 	, width(witdth)
 	, height(height)
 {
+	
 	if (!InitGLFW())
 		throw std::runtime_error("GLFW init error");
 	if (!InitGLAD())
@@ -16,6 +17,7 @@ Graph::Graph(int witdth, int height)
 		std::string("shaders/fragment.glsl")
 	);
 
+	DrawFunc(input);
 	InitGrid();
 }
 
@@ -53,14 +55,19 @@ bool Graph::InitGLAD()
 
 void Graph::InitGrid()
 {
-	for(float i = 0.0f; i > -1.0; i-= 0.1f)
+	for(float i = -0.1f; i > -1.0; i-= 0.1f)
 		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
 	for(float i = 0.1f; i < 1.0; i+= 0.1f)
 		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
-	for(float i = 0.0f; i > -1.0; i-= 0.1f * width / height)
+	for(float i = -0.1f; i > -1.0; i-= 0.1f * width / height)
 		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, i}, glm::vec2{1.0f, i}));
 	for(float i = 0.1f * width / height; i < 1.0; i+= 0.1f * width / height)
 		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, i}, glm::vec2{1.0f, i}));
+
+	this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, 0.0f}
+		, glm::vec2{1.0f, 0.0f}, glm::vec3{1.0f, 1.0f, 1.0f}));
+	this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{0.0f, -1.0f}
+		, glm::vec2{0.0f, 1.0f}, glm::vec3{1.0f, 1.0f, 1.0f}));
 }
 
 void Graph::Update()
@@ -68,7 +75,6 @@ void Graph::Update()
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 
-	shader->Use();
 }
 
 void Graph::Render()
@@ -76,11 +82,29 @@ void Graph::Render()
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	shader->Use();
 	for (const auto &it : grid_lines)
-		it->Draw();
+		it->Draw(*shader);
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
+}
+
+void Graph::DrawFunc(const std::string &input)
+{
+	ExpTree tree(input);
+
+	float prev_x = -1.0f;
+	float prev_y = tree.getResult(tree.getRoot(), prev_x);
+	
+	for (float x = prev_x + 0.01f; x <= 1.0f; x += 0.01f)
+	{
+		float y = tree.getResult(tree.getRoot(), x);
+		this->grid_lines.push_back(std::make_unique<Line>(
+			glm::vec2{prev_x, prev_y}, glm::vec2{x, y}, glm::vec3{1.0f, 0.0f, .0f}));
+		prev_x = x;
+		prev_y = y;
+	}
 }
 
 void Graph::Run()
