@@ -2,6 +2,9 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "Shader.h"
 #include "Line.h"
 #include "ExpTree.h"
@@ -17,10 +20,12 @@
 class Graph
 {
 public:
-	std::mutex formula_mutex;
-	std::string input_formula = "x^2";
-	std::atomic<bool> has_new_formula = true;
-	std::atomic<bool> running = true;
+	glm::vec2 cameraPos = glm::vec2(0.0f, 0.0f);
+	float cameraSpeed = 0.02f;
+
+	float zoom = 1.0f;
+	float zoomSpeed = 0.1f;
+
 public:
 	Graph(int witdth, int height, std::string input);
 	~Graph();
@@ -44,6 +49,9 @@ private:
 	// Update and Render
 	void Update();
 	void Render();
+
+	void PressKey();
+	void UpdateMouse();
 
 private:
 	// Init

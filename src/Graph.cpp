@@ -30,6 +30,14 @@ Graph::~Graph()
 	glfwTerminate();
 }
 
+static void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    Graph* graph = static_cast<Graph*>(glfwGetWindowUserPointer(window));
+    graph->zoom -= graph->zoomSpeed * float(yoffset) * graph->zoom;
+    if (graph->zoom < 0.1f) graph->zoom = 0.1f;
+    if (graph->zoom > 10.0f) graph->zoom = 10.0f;
+}
+
 bool Graph::InitGLFW()
 {
 	glfwInit();
@@ -46,6 +54,9 @@ bool Graph::InitGLFW()
 		glViewport(0, 0, w, h);
 	});
 
+	glfwSetWindowUserPointer(window, this);
+	glfwSetScrollCallback(window, ScrollCallback);
+
 	return true;
 }
 
@@ -56,6 +67,8 @@ bool Graph::InitGLAD()
 
 void Graph::InitGrid()
 {
+	grid_lines.clear();
+
 	for(float i = -0.05f; i > -1.0; i-= 0.05f)
 		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
 	for(float i = 0.05f; i < 1.0; i+= 0.05f)
@@ -73,11 +86,9 @@ void Graph::InitGrid()
 
 void Graph::Update()
 {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
 
-	glm::vec2 mousePos = GetMousePosition();
-	std::cout << "Mouse pos: " << mousePos.x << ", " << mousePos.y << std::endl;
+	PressKey();
+	UpdateMouse();
 }
 
 void Graph::Render()
@@ -85,15 +96,60 @@ void Graph::Render()
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	float aspect = float(height) / width;
+	float scale = zoom;
+
+	glm::mat4 projection = glm::ortho(
+		-1.0f * scale, 1.0f * scale,
+		-1.0f * scale * aspect, 1.0f * scale * aspect
+		)	;
+
+	glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(-cameraPos, 0.0f));
+
+	shader->SetMat4("projection", projection);
+	shader->SetMat4("view", view);
+
+
+
 	shader->Use();
 	for (const auto &it : grid_lines)
 		it->Draw(*shader);
 	for (const auto &it : func)
 		it->Draw(*shader);
 
+
 	//DrawFunc(input_formula);
 	glfwSwapBuffers(window);
 	glfwPollEvents();
+}
+
+void Graph::PressKey()
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, true);
+
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		cameraPos.x -= cameraSpeed;
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		cameraPos.x += cameraSpeed;
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+		cameraPos.y += cameraSpeed;
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		cameraPos.y -= cameraSpeed;
+
+	if (glfwGetKey(window, GLFW_KEY_EQUAL) == GLFW_PRESS) 
+		zoom -= zoomSpeed * zoom;
+	if (glfwGetKey(window, GLFW_KEY_MINUS) == GLFW_PRESS)
+		zoom += zoomSpeed * zoom;
+	
+	if (zoom < 0.1f) zoom = 0.1f;
+	if (zoom > 10.0f) zoom = 10.0f;
+}
+
+void Graph::UpdateMouse()
+{
+	glm::vec2 mousePos = GetMousePosition();
+	std::cout << "Mouse pos: " << mousePos.x << ", " << mousePos.y << std::endl;
 }
 
 void Graph::DrawFunc(const std::string &input)
