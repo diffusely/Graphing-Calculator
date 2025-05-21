@@ -1,4 +1,5 @@
 #include "Triangle.h"
+#include "Grid.h"
 
 Triangle::Triangle()
 {
@@ -25,3 +26,4 @@ void Triangle::draw() const
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 	glBindVertexArray(0);
 }
+

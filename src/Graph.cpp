@@ -1,11 +1,12 @@
 #include "Graph.h"
 
-Graph::Graph(int witdth, int height, std::string input)
+Graph::Graph(int width, int height, std::string input)
 	: window(nullptr)
 	, shader(nullptr)
-	, width(witdth)
+	, width(width)
 	, height(height)
 	, input(input)
+	, m_grid(width, height, 20)
 {
 	
 	if (!InitGLFW())
@@ -19,24 +20,22 @@ Graph::Graph(int witdth, int height, std::string input)
 	);
 
 	DrawFunc(input);
-	InitGrid();
 }
 
 Graph::~Graph()
 {
 	shader.reset();
-	grid_lines.clear();
 	func.clear();
+	m_grid.clear();
 	glfwDestroyWindow(window);
 	glfwTerminate();
 }
 
-static void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+void Graph::ScrollCallback(GLFWwindow* window, double offset_x, double offset_y)
 {
-    Graph* graph = static_cast<Graph*>(glfwGetWindowUserPointer(window));
-    graph->zoom -= graph->zoomSpeed * float(yoffset) * graph->zoom;
-    if (graph->zoom < 0.01f) graph->zoom = 0.01f;
-    if (graph->zoom > 100.0f) graph->zoom = 100.0f;
+	Graph* self = static_cast<Graph*>(glfwGetWindowUserPointer(window));
+	if (self)
+		self->m_controller.processScroll(self->m_camera, offset_x, offset_y);
 }
 
 bool Graph::InitGLFW()
@@ -66,31 +65,12 @@ bool Graph::InitGLAD()
     return gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 }
 
-void Graph::InitGrid()
-{
-	grid_lines.clear();
-
-	for(float i = -0.05f; i > -1.0; i-= 0.05f)
-		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
-	for(float i = 0.05f; i < 1.0; i+= 0.05f)
-		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{i, -1.0f}, glm::vec2{i, 1.0f}));
-	for(float i = 0.0f; i > -1.0; i-= 0.05f * width / height)
-		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, i}, glm::vec2{1.0f, i}));
-	for(float i = 0.05f * width / height; i < 1.0; i+= 0.05f * width / height)
-		this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, i}, glm::vec2{1.0f, i}));
-
-	this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{-1.0f, 0.0f}
-		, glm::vec2{1.0f, 0.0f}, glm::vec3{1.0f, 1.0f, 1.0f}));
-	this->grid_lines.push_back(std::make_unique<Line>(glm::vec2{0.0f, -1.0f}
-		, glm::vec2{0.0f, 1.0f}, glm::vec3{1.0f, 1.0f, 1.0f}));
-}
 
 void Graph::Update()
 {
-	
 	PressKey();
-	UpdateGrid();
-	UpdateMouse();
+	m_grid.update(m_camera);
+	//UpdateMouse();
 }
 
 void Graph::Render()
@@ -99,13 +79,14 @@ void Graph::Render()
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	float aspect = float(height) / width;
-	float scale = zoom;
+	float scale = m_camera.getZoom();
 
 	glm::mat4 projection = glm::ortho(
 		-1.0f * scale, 1.0f * scale,
 		-1.0f * scale * aspect, 1.0f * scale * aspect
 	);
 
+	glm::vec2 cameraPos{m_camera.getOffsetX(), m_camera.getOffsetY()};
 	glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(-cameraPos, 0.0f));
 
 	shader->SetMat4("projection", projection);
@@ -114,8 +95,7 @@ void Graph::Render()
 	DrawFunc(input);
 
 	shader->Use();
-	for (const auto& it : grid_lines)
-		it->Draw(*shader);
+	m_grid.draw(*shader);
 	for (const auto& it : func)
 		it->Draw(*shader);
 
@@ -128,70 +108,15 @@ void Graph::PressKey()
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 
-	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		cameraPos.x -= cameraSpeed1 * zoom;
-	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		cameraPos.x += cameraSpeed1 * zoom;
-	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		cameraPos.y += cameraSpeed1 * zoom;
-	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		cameraPos.y -= cameraSpeed1 * zoom;
+	m_controller.processKeyboard(m_camera, window);
+	m_controller.processMouseDrag(m_camera, window);
 
-	if (glfwGetKey(window, GLFW_KEY_EQUAL) == GLFW_PRESS) 
-		zoom -= zoomSpeed * zoom;
-	if (glfwGetKey(window, GLFW_KEY_MINUS) == GLFW_PRESS)
-		zoom += zoomSpeed * zoom;
-	
-
-	std::cout << cameraPos.x << std::endl;
-	if (zoom < 0.01f) zoom = 0.01f;
-	if (zoom > 100.0f) zoom = 100.0f;
-
-	std::cout << zoom << "\n";
 }
 
 void Graph::UpdateMouse()
 {
 	glm::vec2 mousePos = GetMousePosition();
 	std::cout << "Mouse pos: " << mousePos.x << ", " << mousePos.y << std::endl;
-}
-
-void Graph::UpdateGrid()
-{
-	grid_lines.clear();
-
-	float aspect = float(height) / width;
-	float left = cameraPos.x - zoom;
-	float right = cameraPos.x + zoom;
-	float bottom = cameraPos.y - zoom * aspect;
-	float top = cameraPos.y + zoom * aspect;
-	
-	const float pixelsPerGridLine = 30.0f;
-	float visibleWorldWidth = 2.0f * zoom;
-	float worldUnitsPerPixel = visibleWorldWidth / float(width);
-	float gridStep = pixelsPerGridLine * worldUnitsPerPixel;
-	
-	float startX = std::floor(left / gridStep) * gridStep;
-	float startY = std::floor(bottom / gridStep) * gridStep;
-	
-	for (float x = startX; x <= right; x += gridStep)
-		grid_lines.push_back(std::make_unique<Line>(glm::vec2{x, bottom}, glm::vec2{x, top}));
-	
-	for (float y = startY; y <= top; y += gridStep)
-		grid_lines.push_back(std::make_unique<Line>(glm::vec2{left, y}, glm::vec2{right, y}));
-	
-	grid_lines.push_back(std::make_unique<Line>(
-		glm::vec2{left, 0.0f},
-		glm::vec2{right, 0.0f},
-		glm::vec3{1.0f, 1.0f, 1.0f}
-	));
-	
-	grid_lines.push_back(std::make_unique<Line>(
-		glm::vec2{0.0f, bottom},
-		glm::vec2{0.0f, top},
-		glm::vec3{1.0f, 1.0f, 1.0f}
-	));
-	
 }
 
 void Graph::DrawFunc(const std::string &input)
@@ -201,8 +126,8 @@ void Graph::DrawFunc(const std::string &input)
 	ExpTree tree(input);
 
 	float aspect = float(width) / height;
-	float left = cameraPos.x - zoom;
-	float right = cameraPos.x + zoom;
+	float left = m_camera.getOffsetX() - m_camera.getZoom();
+	float right = m_camera.getOffsetY() + m_camera.getZoom();
 
 	float prev_x = left;
 	float prev_y = tree.getResult(tree.getRoot(), prev_x) / aspect;

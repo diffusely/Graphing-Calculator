@@ -8,8 +8,6 @@ Camera::Camera(float x, float y, float zoom)
 Camera::Camera()
 	: m_offset_x(0), m_offset_y(0), m_zoom(1.0f) {}
 
-Camera::~Camera() {}
-
 void Camera::transform()
 {
 	glScalef(m_zoom, m_zoom, 1.0f); // Z -> scale 1.0f
@@ -25,6 +23,9 @@ void Camera::move(float dx, float dy)
 void Camera::zoom(float factor)
 {
 	m_zoom *= factor;
+
+	if (m_zoom <= 0.1f ) m_zoom = 0.1f;
+	else if (m_zoom >= 50.0f) m_zoom = 50.0f;
 }
 
 float Camera::getOffsetX() const { return m_offset_x; }

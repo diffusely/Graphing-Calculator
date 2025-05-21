@@ -8,7 +8,8 @@ public:
 
 	Camera(float, float, float);
 	Camera();
-	~Camera();
+
+	~Camera() = default;
 
 	// Functions
 	void transform();

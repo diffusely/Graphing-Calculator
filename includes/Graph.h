@@ -8,6 +8,9 @@
 #include "Shader.h"
 #include "Line.h"
 #include "ExpTree.h"
+#include "Camera.h"
+#include "CameraController.h"
+#include "Grid.h"
 
 #include <memory>
 #include <iostream>
@@ -20,22 +23,18 @@
 class Graph
 {
 public:
-	glm::vec2 cameraPos = glm::vec2(0.0f, 0.0f);
-	float cameraSpeed = 0.02f;
-	float cameraSpeed1 = 0.005f;
-	float zoom = 1.0f;
-	float zoomSpeed = 0.05f;
-
-
-	
-
-public:
 	Graph(int witdth, int height, std::string input);
 	~Graph();
 
 	void DrawFunc(const std::string &);
 	glm::vec2 GetMousePosition() const;
+	static void ScrollCallback(GLFWwindow* window, double offset_x, double offset_y);
 	void Run();
+
+private:
+	Camera m_camera;
+	CameraController m_controller;
+	Grid m_grid;
 
 private:
 	GLFWwindow* window;
@@ -45,7 +44,7 @@ private:
 	int height;
 
 private:
-	std::vector<std::unique_ptr<Line>> grid_lines;
+
 	std::vector<std::unique_ptr<Line>> func;
 	std::string input;
 private:

@@ -9,7 +9,9 @@ ODIR	= obj/
 
 SRC		= $(SDIR)main.cpp $(SDIR)Triangle.cpp \
 		  $(SDIR)Shader.cpp $(SDIR)Line.cpp \
-		  $(SDIR)Graph.cpp $(SDIR)ExpTree.cpp
+		  $(SDIR)Graph.cpp $(SDIR)ExpTree.cpp \
+		  $(SDIR)Camera.cpp $(SDIR)CameraController.cpp \
+		  $(SDIR)Grid.cpp
 
 OBJ		= $(patsubst $(SDIR)%.cpp,$(ODIR)%.o,$(SRC))
 
