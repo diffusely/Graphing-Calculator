@@ -22,9 +22,12 @@ class Graph
 public:
 	glm::vec2 cameraPos = glm::vec2(0.0f, 0.0f);
 	float cameraSpeed = 0.02f;
-
+	float cameraSpeed1 = 0.005f;
 	float zoom = 1.0f;
-	float zoomSpeed = 0.1f;
+	float zoomSpeed = 0.05f;
+
+
+	
 
 public:
 	Graph(int witdth, int height, std::string input);
@@ -44,7 +47,7 @@ private:
 private:
 	std::vector<std::unique_ptr<Line>> grid_lines;
 	std::vector<std::unique_ptr<Line>> func;
-
+	std::string input;
 private:
 	// Update and Render
 	void Update();
@@ -52,6 +55,7 @@ private:
 
 	void PressKey();
 	void UpdateMouse();
+	void UpdateGrid();
 
 private:
 	// Init

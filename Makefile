@@ -5,11 +5,13 @@ GLAD	= lib/glad/
 LIB		= -L$(GLAD) -lglad
 
 SDIR	= src/
+ODIR	= obj/
+
 SRC		= $(SDIR)main.cpp $(SDIR)Triangle.cpp \
 		  $(SDIR)Shader.cpp $(SDIR)Line.cpp \
 		  $(SDIR)Graph.cpp $(SDIR)ExpTree.cpp
 
-OBJ		= $(SRC:%.cpp=%.o)
+OBJ		= $(patsubst $(SDIR)%.cpp,$(ODIR)%.o,$(SRC))
 
 INC		= -Iincludes -I$(GLAD)/include
 GLFLAG	= -lglfw -lGL -ldl
@@ -19,7 +21,11 @@ RM		= rm -rf
 
 all			:	$(NAME)
 
-%.o			:	%.cpp
+$(ODIR)		:
+				mkdir -p $(ODIR)
+
+
+$(ODIR)%.o	: 	$(SDIR)%.cpp | $(ODIR)
 				$(GPP) -c $< -o $@
 
 $(NAME)		:	$(OBJ)
@@ -30,7 +36,7 @@ re			:	fclean all
 
 clean		:
 				make -C $(GLAD) clean
-				$(RM) $(OBJ)
+				$(RM) $(OBJ) $(ODIR)
 
 fclean		:	clean
 				make -C $(GLAD) fclean
