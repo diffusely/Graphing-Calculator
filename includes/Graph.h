@@ -12,6 +12,9 @@
 #include "CameraController.h"
 #include "Grid.h"
 
+
+
+
 #include <memory>
 #include <iostream>
 #include <exception>
@@ -22,6 +25,11 @@
 
 class Graph
 {
+
+private:
+
+	char functionInput[128];
+
 public:
 	Graph(int witdth, int height, std::string input);
 	~Graph();

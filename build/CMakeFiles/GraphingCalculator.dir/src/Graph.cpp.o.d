@@ -1,7 +1,7 @@
 CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: \
  /home/nor/Desktop/Graphing-Calculator/src/Graph.cpp \
  /usr/include/stdc-predef.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Graph.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Graph.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/glad/glad.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -249,7 +249,7 @@ CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: \
  /usr/include/glm/ext/vector_uint1_sized.hpp /usr/include/c++/13/cstring \
  /usr/include/string.h /usr/include/strings.h \
  /usr/include/glm/gtc/type_ptr.inl \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Shader.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Shader.h \
  /usr/include/glm/glm.hpp /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
@@ -356,18 +356,18 @@ CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/iostream \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Line.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Line.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/ExpTree.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/ExpTree.h \
  /usr/include/c++/13/stack /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/bits/stl_stack.h /usr/include/c++/13/math.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Camera.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/CameraController.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Grid.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Camera.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/CameraController.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Grid.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
@@ -385,4 +385,8 @@ CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: \
  /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
  /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/atomic
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/atomic \
+ /home/nor/Desktop/Graphing-Calculator/src/../lib/imgui/imgui.h \
+ /home/nor/Desktop/Graphing-Calculator/src/../lib/imgui/imconfig.h \
+ /home/nor/Desktop/Graphing-Calculator/src/../lib/imgui/backends/imgui_impl_glfw.h \
+ /home/nor/Desktop/Graphing-Calculator/src/../lib/imgui/backends/imgui_impl_opengl3.h

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named glad
+
+# Build rule for target.
+glad: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad
+.PHONY : glad
+
+# fast build rule for target.
+glad/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/build
+.PHONY : glad/fast
+
+#=============================================================================
 # Target rules for targets named GraphingCalculator
 
 # Build rule for target.
@@ -134,7 +147,7 @@ lib/glad/src/glad.o: lib/glad/src/glad.c.o
 
 # target to build an object file
 lib/glad/src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/lib/glad/src/glad.c.o
 .PHONY : lib/glad/src/glad.c.o
 
 lib/glad/src/glad.i: lib/glad/src/glad.c.i
@@ -142,7 +155,7 @@ lib/glad/src/glad.i: lib/glad/src/glad.c.i
 
 # target to preprocess a source file
 lib/glad/src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/lib/glad/src/glad.c.i
 .PHONY : lib/glad/src/glad.c.i
 
 lib/glad/src/glad.s: lib/glad/src/glad.c.s
@@ -150,7 +163,7 @@ lib/glad/src/glad.s: lib/glad/src/glad.c.s
 
 # target to generate assembly for a file
 lib/glad/src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/lib/glad/src/glad.c.s
 .PHONY : lib/glad/src/glad.c.s
 
 lib/imgui/backends/imgui_impl_glfw.o: lib/imgui/backends/imgui_impl_glfw.cpp.o
@@ -225,6 +238,30 @@ lib/imgui/imgui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.s
 .PHONY : lib/imgui/imgui.cpp.s
 
+lib/imgui/imgui_demo.o: lib/imgui/imgui_demo.cpp.o
+.PHONY : lib/imgui/imgui_demo.o
+
+# target to build an object file
+lib/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o
+.PHONY : lib/imgui/imgui_demo.cpp.o
+
+lib/imgui/imgui_demo.i: lib/imgui/imgui_demo.cpp.i
+.PHONY : lib/imgui/imgui_demo.i
+
+# target to preprocess a source file
+lib/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.i
+.PHONY : lib/imgui/imgui_demo.cpp.i
+
+lib/imgui/imgui_demo.s: lib/imgui/imgui_demo.cpp.s
+.PHONY : lib/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.s
+.PHONY : lib/imgui/imgui_demo.cpp.s
+
 lib/imgui/imgui_draw.o: lib/imgui/imgui_draw.cpp.o
 .PHONY : lib/imgui/imgui_draw.o
 
@@ -297,29 +334,221 @@ lib/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.s
 .PHONY : lib/imgui/imgui_widgets.cpp.s
 
-test_main.o: test_main.cpp.o
-.PHONY : test_main.o
+src/Camera.o: src/Camera.cpp.o
+.PHONY : src/Camera.o
 
 # target to build an object file
-test_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/test_main.cpp.o
-.PHONY : test_main.cpp.o
+src/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
 
-test_main.i: test_main.cpp.i
-.PHONY : test_main.i
+src/Camera.i: src/Camera.cpp.i
+.PHONY : src/Camera.i
 
 # target to preprocess a source file
-test_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/test_main.cpp.i
-.PHONY : test_main.cpp.i
+src/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
 
-test_main.s: test_main.cpp.s
-.PHONY : test_main.s
+src/Camera.s: src/Camera.cpp.s
+.PHONY : src/Camera.s
 
 # target to generate assembly for a file
-test_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/test_main.cpp.s
-.PHONY : test_main.cpp.s
+src/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
+src/CameraController.o: src/CameraController.cpp.o
+.PHONY : src/CameraController.o
+
+# target to build an object file
+src/CameraController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o
+.PHONY : src/CameraController.cpp.o
+
+src/CameraController.i: src/CameraController.cpp.i
+.PHONY : src/CameraController.i
+
+# target to preprocess a source file
+src/CameraController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.i
+.PHONY : src/CameraController.cpp.i
+
+src/CameraController.s: src/CameraController.cpp.s
+.PHONY : src/CameraController.s
+
+# target to generate assembly for a file
+src/CameraController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.s
+.PHONY : src/CameraController.cpp.s
+
+src/ExpTree.o: src/ExpTree.cpp.o
+.PHONY : src/ExpTree.o
+
+# target to build an object file
+src/ExpTree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o
+.PHONY : src/ExpTree.cpp.o
+
+src/ExpTree.i: src/ExpTree.cpp.i
+.PHONY : src/ExpTree.i
+
+# target to preprocess a source file
+src/ExpTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.i
+.PHONY : src/ExpTree.cpp.i
+
+src/ExpTree.s: src/ExpTree.cpp.s
+.PHONY : src/ExpTree.s
+
+# target to generate assembly for a file
+src/ExpTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.s
+.PHONY : src/ExpTree.cpp.s
+
+src/Graph.o: src/Graph.cpp.o
+.PHONY : src/Graph.o
+
+# target to build an object file
+src/Graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o
+.PHONY : src/Graph.cpp.o
+
+src/Graph.i: src/Graph.cpp.i
+.PHONY : src/Graph.i
+
+# target to preprocess a source file
+src/Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.i
+.PHONY : src/Graph.cpp.i
+
+src/Graph.s: src/Graph.cpp.s
+.PHONY : src/Graph.s
+
+# target to generate assembly for a file
+src/Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.s
+.PHONY : src/Graph.cpp.s
+
+src/Grid.o: src/Grid.cpp.o
+.PHONY : src/Grid.o
+
+# target to build an object file
+src/Grid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o
+.PHONY : src/Grid.cpp.o
+
+src/Grid.i: src/Grid.cpp.i
+.PHONY : src/Grid.i
+
+# target to preprocess a source file
+src/Grid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.i
+.PHONY : src/Grid.cpp.i
+
+src/Grid.s: src/Grid.cpp.s
+.PHONY : src/Grid.s
+
+# target to generate assembly for a file
+src/Grid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.s
+.PHONY : src/Grid.cpp.s
+
+src/Line.o: src/Line.cpp.o
+.PHONY : src/Line.o
+
+# target to build an object file
+src/Line.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o
+.PHONY : src/Line.cpp.o
+
+src/Line.i: src/Line.cpp.i
+.PHONY : src/Line.i
+
+# target to preprocess a source file
+src/Line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Line.cpp.i
+.PHONY : src/Line.cpp.i
+
+src/Line.s: src/Line.cpp.s
+.PHONY : src/Line.s
+
+# target to generate assembly for a file
+src/Line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Line.cpp.s
+.PHONY : src/Line.cpp.s
+
+src/Shader.o: src/Shader.cpp.o
+.PHONY : src/Shader.o
+
+# target to build an object file
+src/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o
+.PHONY : src/Shader.cpp.o
+
+src/Shader.i: src/Shader.cpp.i
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
+src/Triangle.o: src/Triangle.cpp.o
+.PHONY : src/Triangle.o
+
+# target to build an object file
+src/Triangle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o
+.PHONY : src/Triangle.cpp.o
+
+src/Triangle.i: src/Triangle.cpp.i
+.PHONY : src/Triangle.i
+
+# target to preprocess a source file
+src/Triangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.i
+.PHONY : src/Triangle.cpp.i
+
+src/Triangle.s: src/Triangle.cpp.s
+.PHONY : src/Triangle.s
+
+# target to generate assembly for a file
+src/Triangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.s
+.PHONY : src/Triangle.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -330,6 +559,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... GraphingCalculator"
+	@echo "... glad"
 	@echo "... lib/glad/src/glad.o"
 	@echo "... lib/glad/src/glad.i"
 	@echo "... lib/glad/src/glad.s"
@@ -342,6 +572,9 @@ help:
 	@echo "... lib/imgui/imgui.o"
 	@echo "... lib/imgui/imgui.i"
 	@echo "... lib/imgui/imgui.s"
+	@echo "... lib/imgui/imgui_demo.o"
+	@echo "... lib/imgui/imgui_demo.i"
+	@echo "... lib/imgui/imgui_demo.s"
 	@echo "... lib/imgui/imgui_draw.o"
 	@echo "... lib/imgui/imgui_draw.i"
 	@echo "... lib/imgui/imgui_draw.s"
@@ -351,9 +584,33 @@ help:
 	@echo "... lib/imgui/imgui_widgets.o"
 	@echo "... lib/imgui/imgui_widgets.i"
 	@echo "... lib/imgui/imgui_widgets.s"
-	@echo "... test_main.o"
-	@echo "... test_main.i"
-	@echo "... test_main.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
+	@echo "... src/CameraController.o"
+	@echo "... src/CameraController.i"
+	@echo "... src/CameraController.s"
+	@echo "... src/ExpTree.o"
+	@echo "... src/ExpTree.i"
+	@echo "... src/ExpTree.s"
+	@echo "... src/Graph.o"
+	@echo "... src/Graph.i"
+	@echo "... src/Graph.s"
+	@echo "... src/Grid.o"
+	@echo "... src/Grid.i"
+	@echo "... src/Grid.s"
+	@echo "... src/Line.o"
+	@echo "... src/Line.i"
+	@echo "... src/Line.s"
+	@echo "... src/Shader.o"
+	@echo "... src/Shader.i"
+	@echo "... src/Shader.s"
+	@echo "... src/Triangle.o"
+	@echo "... src/Triangle.i"
+	@echo "... src/Triangle.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

@@ -1,7 +1,7 @@
 CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: \
  /home/nor/Desktop/Graphing-Calculator/src/Triangle.cpp \
  /usr/include/stdc-predef.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Triangle.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Triangle.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/glad/glad.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -20,8 +20,8 @@ CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Grid.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Line.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Grid.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Line.h \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/13/cmath /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -242,7 +242,7 @@ CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Shader.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Shader.h \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/quaternion.hpp \
  /usr/include/glm/gtc/constants.hpp \
  /usr/include/glm/ext/scalar_constants.hpp \
@@ -360,7 +360,7 @@ CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/iostream \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Camera.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Camera.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \

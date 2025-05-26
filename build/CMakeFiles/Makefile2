@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/nor/Desktop/Graphing-Calculator/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/glad.dir/all
 all: CMakeFiles/GraphingCalculator.dir/all
 .PHONY : all
 
@@ -71,22 +72,49 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/glad.dir/clean
 clean: CMakeFiles/GraphingCalculator.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/glad.dir
+
+# All Build rule for target.
+CMakeFiles/glad.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=18,19 "Built target glad"
+.PHONY : CMakeFiles/glad.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/glad.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nor/Desktop/Graphing-Calculator/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glad.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nor/Desktop/Graphing-Calculator/build/CMakeFiles 0
+.PHONY : CMakeFiles/glad.dir/rule
+
+# Convenience name for target.
+glad: CMakeFiles/glad.dir/rule
+.PHONY : glad
+
+# clean rule for target.
+CMakeFiles/glad.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/clean
+.PHONY : CMakeFiles/glad.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/GraphingCalculator.dir
 
 # All Build rule for target.
-CMakeFiles/GraphingCalculator.dir/all:
+CMakeFiles/GraphingCalculator.dir/all: CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GraphingCalculator.dir/build.make CMakeFiles/GraphingCalculator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target GraphingCalculator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target GraphingCalculator"
 .PHONY : CMakeFiles/GraphingCalculator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GraphingCalculator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nor/Desktop/Graphing-Calculator/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nor/Desktop/Graphing-Calculator/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GraphingCalculator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nor/Desktop/Graphing-Calculator/build/CMakeFiles 0
 .PHONY : CMakeFiles/GraphingCalculator.dir/rule

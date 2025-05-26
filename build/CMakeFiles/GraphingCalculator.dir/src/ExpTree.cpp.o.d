@@ -1,7 +1,7 @@
 CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o: \
  /home/nor/Desktop/Graphing-Calculator/src/ExpTree.cpp \
  /usr/include/stdc-predef.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/ExpTree.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/ExpTree.h \
  /usr/include/c++/13/stack /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

@@ -69,52 +69,136 @@ include CMakeFiles/GraphingCalculator.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GraphingCalculator.dir/flags.make
 
-CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o: CMakeFiles/GraphingCalculator.dir/flags.make
-CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o: /home/nor/Desktop/Graphing-Calculator/lib/glad/src/glad.c
-CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o -MF CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o.d -o CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o -c /home/nor/Desktop/Graphing-Calculator/lib/glad/src/glad.c
+CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/Camera.cpp
+CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/Camera.cpp
 
-CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/lib/glad/src/glad.c > CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.i
+CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/Camera.cpp > CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.i
 
-CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/glad/src/glad.c -o CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.s
+CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/Camera.cpp -o CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.s
 
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/CameraController.cpp
+CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/CameraController.cpp
 
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.i
+CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/CameraController.cpp > CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.i
 
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.s
+CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/CameraController.cpp -o CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.s
 
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp
+CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/ExpTree.cpp
+CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/ExpTree.cpp
 
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.i
+CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/ExpTree.cpp > CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.i
 
-CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.s
+CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/ExpTree.cpp -o CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/Graph.cpp
+CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/Graph.cpp
+
+CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/Graph.cpp > CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/Graph.cpp -o CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/Grid.cpp
+CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/Grid.cpp
+
+CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/Grid.cpp > CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/Grid.cpp -o CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/Line.cpp
+CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/Line.cpp
+
+CMakeFiles/GraphingCalculator.dir/src/Line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/Line.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/Line.cpp > CMakeFiles/GraphingCalculator.dir/src/Line.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/src/Line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/Line.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/Line.cpp -o CMakeFiles/GraphingCalculator.dir/src/Line.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/Shader.cpp
+CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/Shader.cpp
+
+CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/Shader.cpp > CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/Shader.cpp -o CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/Triangle.cpp
+CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/Triangle.cpp
+
+CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/Triangle.cpp > CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/Triangle.cpp -o CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/src/main.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/src/main.cpp.o: /home/nor/Desktop/Graphing-Calculator/src/main.cpp
+CMakeFiles/GraphingCalculator.dir/src/main.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GraphingCalculator.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/src/main.cpp.o -MF CMakeFiles/GraphingCalculator.dir/src/main.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/src/main.cpp.o -c /home/nor/Desktop/Graphing-Calculator/src/main.cpp
+
+CMakeFiles/GraphingCalculator.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/src/main.cpp > CMakeFiles/GraphingCalculator.dir/src/main.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/src/main.cpp -o CMakeFiles/GraphingCalculator.dir/src/main.cpp.s
 
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui.cpp
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui.cpp
 
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.i: cmake_force
@@ -128,7 +212,7 @@ CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_draw.cpp
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_draw.cpp
 
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.i: cmake_force
@@ -142,7 +226,7 @@ CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_tables.cpp
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_tables.cpp
 
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.i: cmake_force
@@ -156,7 +240,7 @@ CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_widgets.cpp
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_widgets.cpp
 
 CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.i: cmake_force
@@ -167,48 +251,93 @@ CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_widgets.cpp -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.s
 
-CMakeFiles/GraphingCalculator.dir/test_main.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
-CMakeFiles/GraphingCalculator.dir/test_main.cpp.o: /home/nor/Desktop/Graphing-Calculator/test_main.cpp
-CMakeFiles/GraphingCalculator.dir/test_main.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GraphingCalculator.dir/test_main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/test_main.cpp.o -MF CMakeFiles/GraphingCalculator.dir/test_main.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/test_main.cpp.o -c /home/nor/Desktop/Graphing-Calculator/test_main.cpp
+CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_demo.cpp
+CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_demo.cpp
 
-CMakeFiles/GraphingCalculator.dir/test_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/test_main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/test_main.cpp > CMakeFiles/GraphingCalculator.dir/test_main.cpp.i
+CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_demo.cpp > CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.i
 
-CMakeFiles/GraphingCalculator.dir/test_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/test_main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/test_main.cpp -o CMakeFiles/GraphingCalculator.dir/test_main.cpp.s
+CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/imgui/imgui_demo.cpp -o CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp
+
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.s
+
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/GraphingCalculator.dir/flags.make
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o: /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/GraphingCalculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp
+
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.i
+
+CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nor/Desktop/Graphing-Calculator/lib/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.s
 
 # Object files for target GraphingCalculator
 GraphingCalculator_OBJECTS = \
-"CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o" \
-"CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o" \
-"CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/src/main.cpp.o" \
 "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o" \
 "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o" \
 "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o" \
-"CMakeFiles/GraphingCalculator.dir/test_main.cpp.o"
+"CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o"
 
 # External object files for target GraphingCalculator
 GraphingCalculator_EXTERNAL_OBJECTS =
 
-GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o
-GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o
-GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/src/main.cpp.o
 GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o
 GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o
 GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o
 GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o
-GraphingCalculator: CMakeFiles/GraphingCalculator.dir/test_main.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o
+GraphingCalculator: CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o
 GraphingCalculator: CMakeFiles/GraphingCalculator.dir/build.make
-GraphingCalculator: /usr/lib/x86_64-linux-gnu/libGL.so
-GraphingCalculator: /usr/lib/x86_64-linux-gnu/libGLU.so
+GraphingCalculator: libglad.a
 GraphingCalculator: CMakeFiles/GraphingCalculator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable GraphingCalculator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable GraphingCalculator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GraphingCalculator.dir/link.txt --verbose=$(VERBOSE)
+	/usr/bin/cmake -E make_directory /home/nor/Desktop/Graphing-Calculator/build/shaders
+	/usr/bin/cmake -E copy_directory /home/nor/Desktop/Graphing-Calculator/shaders /home/nor/Desktop/Graphing-Calculator/build/shaders
 
 # Rule to build all files generated by this target.
 CMakeFiles/GraphingCalculator.dir/build: GraphingCalculator

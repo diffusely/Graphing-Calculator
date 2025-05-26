@@ -1,7 +1,7 @@
 CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o: \
  /home/nor/Desktop/Graphing-Calculator/src/CameraController.cpp \
  /usr/include/stdc-predef.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/CameraController.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/CameraController.h \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -22,7 +22,7 @@ CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/KHR/khrplatform.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Camera.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Camera.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

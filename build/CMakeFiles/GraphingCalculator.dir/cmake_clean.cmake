@@ -1,25 +1,41 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o"
-  "CMakeFiles/GraphingCalculator.dir/lib/glad/src/glad.c.o.d"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_glfw.cpp.o.d"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/backends/imgui_impl_opengl3.cpp.o.d"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_demo.cpp.o.d"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_draw.cpp.o.d"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_tables.cpp.o.d"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o"
   "CMakeFiles/GraphingCalculator.dir/lib/imgui/imgui_widgets.cpp.o.d"
-  "CMakeFiles/GraphingCalculator.dir/test_main.cpp.o"
-  "CMakeFiles/GraphingCalculator.dir/test_main.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/Camera.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/CameraController.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/ExpTree.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/Graph.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/Grid.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/Triangle.cpp.o.d"
+  "CMakeFiles/GraphingCalculator.dir/src/main.cpp.o"
+  "CMakeFiles/GraphingCalculator.dir/src/main.cpp.o.d"
   "GraphingCalculator"
   "GraphingCalculator.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C CXX)
+foreach(lang CXX)
   include(CMakeFiles/GraphingCalculator.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

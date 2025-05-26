@@ -1,5 +1,9 @@
 #include "Graph.h"
 
+#include "../lib/imgui/imgui.h"
+#include "../lib/imgui/backends/imgui_impl_glfw.h"
+#include "../lib/imgui/backends/imgui_impl_opengl3.h"
+
 Graph::Graph(int width, int height, std::string input)
 	: window(nullptr)
 	, shader(nullptr)
@@ -19,6 +23,15 @@ Graph::Graph(int width, int height, std::string input)
 		std::string("shaders/fragment.glsl")
 	);
 
+
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	ImGui::StyleColorsDark();
+
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	ImGui_ImplOpenGL3_Init("#version 330");
+
 	DrawFunc(input);
 }
 
@@ -27,6 +40,11 @@ Graph::~Graph()
 	shader.reset();
 	func.clear();
 	m_grid.clear();
+
+
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
 	glfwDestroyWindow(window);
 	glfwTerminate();
 }
@@ -68,6 +86,9 @@ bool Graph::InitGLAD()
 
 void Graph::Update()
 {
+
+
+	
 	PressKey();
 	m_grid.update(m_camera);
 	//UpdateMouse();
@@ -99,8 +120,6 @@ void Graph::Render()
 	for (const auto& it : func)
 		it->Draw(*shader);
 
-	glfwSwapBuffers(window);
-	glfwPollEvents();
 }
 
 void Graph::PressKey()
@@ -109,7 +128,7 @@ void Graph::PressKey()
 		glfwSetWindowShouldClose(window, true);
 
 	m_controller.processKeyboard(m_camera, window);
-	m_controller.processMouseDrag(m_camera, window);
+	//m_controller.processMouseDrag(m_camera, window);
 
 }
 
@@ -172,8 +191,33 @@ glm::vec2 Graph::GetMousePosition() const
 void Graph::Run()
 {
 	while (!glfwWindowShouldClose(window))
-	{
-		Update();
-		Render();
-	}
+    {
+        glfwPollEvents();
+
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        ImGui::Begin("Graph Controller");
+
+        ImGui::InputText("Function", functionInput, IM_ARRAYSIZE(functionInput));
+
+        if (ImGui::Button("Update Function")) {
+            input = std::string(functionInput);
+            DrawFunc(input);
+        }
+
+        ImGui::Text("Current function: %s", input.c_str());
+
+        ImGui::End();
+
+        Update();
+
+        Render();
+
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        glfwSwapBuffers(window);
+    }
 }

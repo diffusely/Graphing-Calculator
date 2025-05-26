@@ -1,7 +1,7 @@
 CMakeFiles/GraphingCalculator.dir/src/Shader.cpp.o: \
  /home/nor/Desktop/Graphing-Calculator/src/Shader.cpp \
  /usr/include/stdc-predef.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Shader.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Shader.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/glad/glad.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \

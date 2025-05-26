@@ -1,34 +1,62 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 project(GraphingCalculator)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Include paths
+
 include_directories(
-    ${PROJECT_SOURCE_DIR}/include
-    ${PROJECT_SOURCE_DIR}/lib/glad/include
-    ${PROJECT_SOURCE_DIR}/lib/imgui
-	${PROJECT_SOURCE_DIR}/src
+    includes
+    lib/glad/include
+    lib/imgui
+    lib/imgui/backends
 )
 
-# Source files
-file(GLOB_RECURSE SRC
-    test_main.cpp
-    lib/glad/glad.c
+
+file(GLOB_RECURSE SOURCES
+    src/*.cpp
+)
+
+set(IMGUI_SOURCES
     lib/imgui/imgui.cpp
     lib/imgui/imgui_draw.cpp
     lib/imgui/imgui_tables.cpp
     lib/imgui/imgui_widgets.cpp
-    lib/imgui/backends/imgui_impl_opengl3.cpp
+    lib/imgui/imgui_demo.cpp
     lib/imgui/backends/imgui_impl_glfw.cpp
+    lib/imgui/backends/imgui_impl_opengl3.cpp
 )
 
-add_executable(GraphingCalculator ${SRC})
 
-# Link with OpenGL and other system libraries
-find_package(OpenGL REQUIRED)
+add_library(glad STATIC
+    lib/glad/src/glad.c
+)
+
+
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)
+include_directories(${GLFW_INCLUDE_DIRS})
 
-target_include_directories(GraphingCalculator PRIVATE ${GLFW_INCLUDE_DIRS})
-target_link_libraries(GraphingCalculator ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES})
+
+find_package(OpenGL REQUIRED)
+
+
+add_executable(GraphingCalculator
+    ${SOURCES}
+    ${IMGUI_SOURCES}
+)
+
+target_link_libraries(GraphingCalculator
+    glad
+    ${GLFW_LIBRARIES}
+    ${OPENGL_gl_LIBRARY}
+    dl
+)
+
+
+add_custom_command(TARGET GraphingCalculator POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/shaders"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/shaders"
+        "${CMAKE_CURRENT_BINARY_DIR}/shaders"
+)

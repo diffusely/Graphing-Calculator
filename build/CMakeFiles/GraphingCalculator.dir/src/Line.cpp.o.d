@@ -1,7 +1,7 @@
 CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o: \
  /home/nor/Desktop/Graphing-Calculator/src/Line.cpp \
  /usr/include/stdc-predef.h \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Line.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Line.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/glad/glad.h \
  /home/nor/Desktop/Graphing-Calculator/lib/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -240,7 +240,7 @@ CMakeFiles/GraphingCalculator.dir/src/Line.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/nor/Desktop/Graphing-Calculator/src/../includes/Shader.h \
+ /home/nor/Desktop/Graphing-Calculator/includes/Shader.h \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/quaternion.hpp \
  /usr/include/glm/gtc/constants.hpp \
  /usr/include/glm/ext/scalar_constants.hpp \
