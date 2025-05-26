@@ -1,4 +1,0 @@
-/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles/glad.dir
-/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles/GraphingCalculator.dir
-/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles/edit_cache.dir
-/home/nor/Desktop/Graphing-Calculator/build/CMakeFiles/rebuild_cache.dir
