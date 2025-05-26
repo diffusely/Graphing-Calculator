@@ -36,4 +36,9 @@ It renders mathematical functions in real time using an expression tree.
    make
 
 
+![Graph example](./img/Graph1.png)
+
+
+
+![Graph example](./img/Graph2.png)
 
